@@ -2,6 +2,7 @@
 [ "$INTERFACE" = wan ] || exit 0
 [ "$ACTION" = ifdown ] || exit 0
 echo "$(date) wan interface down, auto restarting" >> /var/log/restart-wan.log 2>&1
-sleep 15s
+sleep 3s
 ifup wan
+sleep 3s
 /etc/init.d/passwall restart
