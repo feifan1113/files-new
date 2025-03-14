@@ -4,4 +4,4 @@
 echo "$(date) wan interface down, auto restarting" >> /var/log/restart-wan.log 2>&1
 sleep 3s && ifup wan
 sleep 60s && /sbin/ifup lan
-sleep 120s && /etc/config/update-aaaa-local.sh
+sleep 60s && /etc/init.d/passwall restart
